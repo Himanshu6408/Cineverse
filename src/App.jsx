@@ -3,6 +3,7 @@ import Home from "./Components/Home";
 import { Route, Routes } from "react-router-dom";
 import DetailsPage from "./Components/DetailsPage";
 
+
 function App() {
   return (
     <>

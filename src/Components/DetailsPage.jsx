@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import Loading from "./Loading";
 function DetailsPage() {
   const { id } = useParams();
   const [data, setdata] = useState([]);
   const navigate = useNavigate();
+  const [loading, setloading] = useState(true);
   const DetailsApi = async () => {
     try {
       const res = await axios.get("https://www.omdbapi.com/", {
@@ -19,13 +21,17 @@ function DetailsPage() {
       console.log(res.data);
     } catch (error) {
       console.log("error");
+    } finally {
+      setloading(false);
     }
   };
   useEffect(() => {
     DetailsApi();
   }, [id]);
   //   console.log("data", res.data);
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <>
       <div className="h-screen w-screen bg-black relative text-white">
         <span
@@ -53,6 +59,9 @@ function DetailsPage() {
               </span>
               <span className="flex gap-x-3 mt-1 ">
                 Director :<p>{data.Director}</p>
+              </span>
+              <span className="flex gap-x-3 mt-1 ">
+                Writer :<p>{data.Writer}</p>
               </span>
               <span className="flex gap-x-3 mt-1 ">
                 Language :<p>{data.Language}</p>
