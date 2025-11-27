@@ -61,7 +61,7 @@ function DetailsPage() {
                 Director :<p>{data.Director}</p>
               </span>
               <span className="flex gap-x-3 mt-1 ">
-                Writer :<p>{data.Writer}</p>
+                Writerdfgdfgdghdgfh :<p>{data.Writer}</p>
               </span>
               <span className="flex gap-x-3 mt-1 ">
                 Language :<p>{data.Language}</p>
