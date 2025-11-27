@@ -52,7 +52,7 @@ function DetailsPage() {
                 Title :<p>{data.Title}</p>
               </span>
               <span className="flex gap-x-3 mt-1 ">
-                Actor :<p>{data.Actors}</p>
+                Actors :<p>{data.Actors}</p>
               </span>
               <span className="flex gap-x-3 mt-1 ">
                 Country :<p>{data.Country}</p>
